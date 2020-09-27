@@ -12,8 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - run: yarn
+      - run: yarn build
+      - run: yarn build-storybook
       - uses: chromaui/action@v1
         # options required to the GitHub chromatic action
         with:
           projectToken: project-token
           token: ${{ secrets.GITHUB_TOKEN }}
+          appCode: 9ofhn0iql7n
